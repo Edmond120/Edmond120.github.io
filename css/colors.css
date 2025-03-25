@@ -1,0 +1,10 @@
+@theme {
+	--color-background-base: var(--color-slate-200);
+	--color-text-default: var(--color-black);
+}
+
+@layer base {
+	* {
+		color: var(--color-text-default);
+	}
+}

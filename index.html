@@ -9,11 +9,59 @@
 	<header class="mt-16 text-center">
 		<hgroup>
 			<p class="text-4xl">Hello, I'm</p>
-			<h1 class="text-5xl">Edmond Wong</h1>
+			<h1 class="text-6xl">Edmond Wong</h1>
 		</hgroup>
 	</header>
-	<article class="mx-auto mt-8 p-8 container text-center">
-		<h2 class="text-lg">Welcome to my personal site!</h2>
+	<article class="mt-8 mx-auto p-8 space-y-8 container">
+		<h2 class="text-4xl text-center">Welcome to my personal site!</h2>
+		<section class="indent-8">
+			<h3 class="indent-0 text-4xl">About me</h3>
+			<p>
+				I am a software engineer with an interest in backend, embedded systems, robotics, and manufacturing.
+				While my focus is in low-level systems programming, I also have a skill set of a generalist.
+				Being able to wear many hats and effectively collaborate between multiple disciplines is what I consider to be an ideal
+				as a software engineer.
+			</p>
+		</section>
+		<section>
+			<h3 class="text-4xl">Projects</h3>
+			<section class="indent-8">
+				<h4 class="indent-0 text-2xl">8-bit CPU</h4>
+				<p>
+					While I was studying digital electronics, I decided to build a CPU from scratch as a way to bridge my understanding of electronics
+					with my background in computer science. I started by following Ben Eater's guide.
+					Instead of just copying the design, I wanted to make sure that I truly understood the topic.
+					Since I've already have some digital electronics experience, I branched off from the guide whenever I could.
+					Because of the CPU's architecture where everything is nicely broken down into self-contained modules connected by a central bus,
+					I can branch off from the guide in implementation details.
+					Later on, after knowing the interactions between the modules, I would then redo parts of the previous modules to add optimizations
+					that required redesigning the system.
+				</p>
+				<p>
+					The most obvious change that I made to the original design was the Nixie tube display. Although conceptually simple, there were
+					a whole lot of implementations challenges that I had to overcome for the tubes. First was building was the Nixie control module
+					which wasn't too hard due to my prior knowledge of electronics. The hard part was with the high voltage power supply and the
+					relay (electro-magnetic switch) used to toggle the Nixies. It's just a power supply and a switch, how could it possibly be hard?
+					The problem was that the high-voltage requirement of the Nixies and the power consumption of the relay was very disruptive to the
+					sensitive electronics of the CPU. While the CPU was in operation there would be seemingly random hardware glitches even though
+					the system makes perfect logical sense, it was a physics problem. It was only after hours of isolating and testing did I finally
+					realized that I had get a separate power source just for the Nixie tube unit.
+				</p>
+				<p>
+					The biggest change that I made to the original design was to increase the total addressable memory to 256 + 16 bytes from only 16 bytes.
+					Previously the program counter was only 4-bits large due to the way that the 8-bit CPU instructions were split into a 4-bit
+					operation code and a 4-bit argument. This made it impossible to jump to any memory address greater than 16.
+					After improving the program counter module to support 8-bits, I had to redesign the the CPU instructions such that they support
+					instructions 8-bit arguments by loading the argument from the next byte or from a register.
+					Doing so was easy since the instructions was implemented in microcode which is essentially just a big lookup table that maps
+					the op-code and clock cycle to a set of flags used to control the operation of each module.
+					As for the new memory module, I decided to use an EEPROM. This way I would be able to program the CPU using the same arduino circuit
+					used to program the microcode. Memory that needed to change often would be stored in the old 16 byte module and everything can be
+					stored in the EEPROM. Given that this was a slow breadboard CPU, high-performance RAM is not necessay.
+					Even writing persistent data would be possible although unnecessary.
+				</p>
+			</section>
+		</section>
 	</article>
 </body>
 </html>

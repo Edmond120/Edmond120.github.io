@@ -1,0 +1,9 @@
+@layer base {
+	a {
+		@apply text-blue-800
+			hover:text-blue-500
+			active:text-sky-400
+			active:underline
+		;
+	}
+}

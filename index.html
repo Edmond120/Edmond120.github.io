@@ -25,7 +25,7 @@
 		</section>
 		<section>
 			<h3 class="text-4xl">Projects</h3>
-			<section class="indent-8">
+			<section class="mt-4 indent-8">
 				<h4 class="indent-0 text-2xl">8-bit CPU</h4>
 				<p>
 					While I was studying digital electronics, I decided to build a CPU from scratch as a way to bridge my understanding of electronics
@@ -59,6 +59,34 @@
 					used to program the microcode. Memory that needed to change often would be stored in the old 16 byte module and everything can be
 					stored in the EEPROM. Given that this was a slow breadboard CPU, high-performance RAM is not necessay.
 					Even writing persistent data would be possible although unnecessary.
+				</p>
+			</section>
+			<section class="mt-4 indent-8">
+				<header class="indent-0">
+					<h4 class="inline text-2xl mr-2">Simple CPU Emulator in Python</h4>
+					(<a href="https://github.com/Edmond120/simple_machine_language_emulator">GitHub</a>)
+				</header>
+				<p>
+					This is an emulator for a theoretical CPU with a simplified machine language that I made for educational purposes.
+					The CPU uses memory mapping to interface with a Python Turtle Graphics controller.
+					By writing to certain memory addresses it is possible to draw shapes on a canvas.
+					Using this, I wrote a small program that drew this <a href="/images/cpu_emulator/turtle_graphics_pattern.png">hexagon snowflake pattern</a>.
+				</p>
+			</section>
+			<section class="mt-4 indent-8">
+				<header class="indent-0">
+					<h4 class="inline text-2xl mr-2">Discord Bot</h4>
+					(<a href="https://github.com/Edmond120/discord_bot">GitHub</a>)
+				</header>
+				<p>
+					This is chat bot that I made to remember Discord messages using a key value store.
+					Instead of storing the message, the bot stores a reference to the message such that the data is stored on Discord, allowing
+					the for updates to be done without the bot by just editing the Discord message. The primary use of this bot was to query
+					documentation for Dungeon and Dragons.
+				</p>
+				<p>
+					Additional features include animated timers and dice rolls. While this was a relatively simple project it turned out to be very
+					useful and was in operation for a good number of years.
 				</p>
 			</section>
 		</section>

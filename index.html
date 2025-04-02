@@ -27,11 +27,18 @@
 			<h3 class="text-4xl">Projects</h3>
 			<section class="mt-4 indent-8">
 				<h4 class="indent-0 text-2xl">8-bit CPU</h4>
+				<figure class="md:float-right border indent-0">
+					<video class="w-128" controls muted>
+						<source src="/assets/cpu/simple_loop.mp4" type="video/mp4">
+					</video>
+					<figcaption class="text-center">
+						First program, a loop incrementing a counter.
+					</figcaption>
+				</figure>
 				<p>
 					While I was studying digital electronics, I decided to build a CPU from scratch as a way to bridge my understanding of electronics
-					with my background in computer science. I started by following Ben Eater's guide.
-					Instead of just copying the design, I wanted to make sure that I truly understood the topic.
-					Since I've already have some digital electronics experience, I branched off from the guide whenever I could.
+					with my background in computer science. While I started by following Ben Eater's guide, since I've already have some digital
+					electronics experience, I branched off from the guide whenever I could.
 					Because of the CPU's architecture where everything is nicely broken down into self-contained modules connected by a central bus,
 					I can branch off from the guide in implementation details.
 					Later on, after knowing the interactions between the modules, I would then redo parts of the previous modules to add optimizations
@@ -60,6 +67,20 @@
 					stored in the EEPROM. Given that this was a slow breadboard CPU, high-performance RAM is not necessay.
 					Even writing persistent data would be possible although unnecessary.
 				</p>
+				<div class="flex flex-col lg:flex-row gap-4 indent-0">
+					<figure class="border">
+						<a href="/assets/cpu/final_state.jpg">
+							<img class="w-120" src="/assets/cpu/final_state.jpg" alt="Completed Breadboard CPU">
+						</a>
+						<figcaption class="text-center">Final product, after increasing memory</figcaption>
+					</figure>
+					<figure class="border">
+						<a href="/assets/cpu/nixies.jpg">
+							<img class="w-120" src="/assets/cpu/nixies.jpg" alt="Nixie Tube holder">
+						</a>
+						<figcaption class="text-center">Nixie Tube Display</figcaption>
+					</figure>
+				</div>
 			</section>
 			<section class="mt-4 indent-8">
 				<header class="indent-0">

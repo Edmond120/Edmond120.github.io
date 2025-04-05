@@ -222,6 +222,9 @@
   .table {
     display: table;
   }
+  .h-62 {
+    height: calc(var(--spacing) * 62);
+  }
   .h-100 {
     height: calc(var(--spacing) * 100);
   }
@@ -230,6 +233,9 @@
   }
   .w-128 {
     width: calc(var(--spacing) * 128);
+  }
+  .w-138 {
+    width: calc(var(--spacing) * 138);
   }
   .w-150 {
     width: calc(var(--spacing) * 150);

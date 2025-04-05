@@ -17,7 +17,7 @@
 			<h1 class="text-6xl">Edmond Wong</h1>
 		</hgroup>
 	</header>
-	<article class="mt-8 mx-auto p-8 space-y-8 container">
+	<article class="mt-8 mx-auto p-8 space-y-16 container">
 		<h2 class="text-4xl text-center">Welcome to my personal site!</h2>
 		<section class="indent-8">
 			<h3 class="indent-0 text-4xl">About me</h3>
@@ -28,9 +28,38 @@
 				as a software engineer.
 			</p>
 		</section>
-		<section>
+		<section class="space-y-8">
 			<h3 class="text-4xl">Projects</h3>
-			<section class="mt-4 indent-8">
+			<section class="indent-8">
+				<header class="indent-0">
+					<h4 class="inline text-2xl mr-2">Simple CPU Emulator in Python</h4>
+					(<a href="https://github.com/Edmond120/simple_machine_language_emulator">GitHub</a>)
+				</header>
+				<p>
+					This is an emulator for a theoretical CPU with a simplified machine language that I made for educational purposes.
+					The CPU uses memory mapping to interface with a Python Turtle Graphics controller.
+					By writing to certain memory addresses it is possible to draw shapes on a canvas.
+					Using this, I wrote a small program that drew this <a href="/assets/cpu_emulator/turtle_graphics_pattern.png">hexagon snowflake pattern</a>.
+				</p>
+			</section>
+			<section class="indent-8">
+				<header class="indent-0">
+					<h4 class="inline text-2xl mr-2">Discord Bot</h4>
+					(<a href="https://github.com/Edmond120/discord_bot">GitHub</a>)
+				</header>
+				<p>
+					This is chat bot that I made to remember Discord messages using a key value store.
+					Instead of storing the message, the bot stores a reference to the message such that the data is stored on Discord, allowing
+					the for updates to be done without the bot by just editing the Discord message. The primary use of this bot was to query
+					documentation for Dungeon and Dragons.
+				</p>
+				<p>
+					Additional features include animated timers and dice rolls.
+					While simple, this was one of my more useful projects that saw frequent use in multiple private servers during its years of
+					operation.
+				</p>
+			</section>
+			<section class="indent-8">
 				<h4 class="indent-0 text-2xl">8-bit CPU</h4>
 				<figure class="w-fit md:ml-4 md:float-right border indent-0 bg-white">
 					<video class="w-128" controls muted>
@@ -87,36 +116,7 @@
 					</figure>
 				</div>
 			</section>
-			<section class="mt-4 indent-8">
-				<header class="indent-0">
-					<h4 class="inline text-2xl mr-2">Simple CPU Emulator in Python</h4>
-					(<a href="https://github.com/Edmond120/simple_machine_language_emulator">GitHub</a>)
-				</header>
-				<p>
-					This is an emulator for a theoretical CPU with a simplified machine language that I made for educational purposes.
-					The CPU uses memory mapping to interface with a Python Turtle Graphics controller.
-					By writing to certain memory addresses it is possible to draw shapes on a canvas.
-					Using this, I wrote a small program that drew this <a href="/assets/cpu_emulator/turtle_graphics_pattern.png">hexagon snowflake pattern</a>.
-				</p>
-			</section>
-			<section class="mt-4 indent-8">
-				<header class="indent-0">
-					<h4 class="inline text-2xl mr-2">Discord Bot</h4>
-					(<a href="https://github.com/Edmond120/discord_bot">GitHub</a>)
-				</header>
-				<p>
-					This is chat bot that I made to remember Discord messages using a key value store.
-					Instead of storing the message, the bot stores a reference to the message such that the data is stored on Discord, allowing
-					the for updates to be done without the bot by just editing the Discord message. The primary use of this bot was to query
-					documentation for Dungeon and Dragons.
-				</p>
-				<p>
-					Additional features include animated timers and dice rolls.
-					While simple, this was one of my more useful projects that saw frequent use in multiple private servers during its years of
-					operation.
-				</p>
-			</section>
-			<section class="mt-4 indent-8">
+			<section class="indent-8">
 				<h4 class="indent-0 text-2xl">CNC milled Genshin Impact Vision</h4>
 				<figure class="w-fit border indent-0 md:ml-4 md:float-right bg-white">
 					<a href="/assets/genshin_vision/vision_milled.jpg">

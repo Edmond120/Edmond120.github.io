@@ -6,8 +6,13 @@
 	<link rel="stylesheet" href="/build/app.css">
 </head>
 <body class="bg-background-base">
-	<header class="mt-16 text-center">
-		<hgroup>
+	<header>
+		<nav class="mx-auto pt-8 px-8 container">
+			<ul class="flex text-4xl">
+				<li><a href="https://github.com/Edmond120">GitHub</a></li>
+			</ul>
+		</nav>
+		<hgroup class="mt-8 text-center">
 			<p class="text-4xl">Hello, I'm</p>
 			<h1 class="text-6xl">Edmond Wong</h1>
 		</hgroup>
@@ -27,7 +32,7 @@
 			<h3 class="text-4xl">Projects</h3>
 			<section class="mt-4 indent-8">
 				<h4 class="indent-0 text-2xl">8-bit CPU</h4>
-				<figure class="md:float-right border indent-0">
+				<figure class="w-fit md:ml-4 md:float-right border indent-0 bg-white">
 					<video class="w-128" controls muted>
 						<source src="/assets/cpu/simple_loop.mp4" type="video/mp4">
 					</video>
@@ -68,13 +73,13 @@
 					Even writing persistent data would be possible although unnecessary.
 				</p>
 				<div class="flex flex-col lg:flex-row gap-4 indent-0">
-					<figure class="border">
+					<figure class="w-fit border bg-white">
 						<a href="/assets/cpu/final_state.jpg">
 							<img class="w-120" src="/assets/cpu/final_state.jpg" alt="Completed Breadboard CPU">
 						</a>
 						<figcaption class="text-center">Final product, after increasing memory</figcaption>
 					</figure>
-					<figure class="border">
+					<figure class="w-fit border bg-white">
 						<a href="/assets/cpu/nixies.jpg">
 							<img class="w-120" src="/assets/cpu/nixies.jpg" alt="Nixie Tube holder">
 						</a>
@@ -110,6 +115,142 @@
 					While simple, this was one of my more useful projects that saw frequent use in multiple private servers during its years of
 					operation.
 				</p>
+			</section>
+			<section class="mt-4 indent-8">
+				<h4 class="indent-0 text-2xl">CNC milled Genshin Impact Vision</h4>
+				<figure class="w-fit border indent-0 md:ml-4 md:float-right bg-white">
+					<a href="/assets/genshin_vision/vision_milled.jpg">
+						<img class="w-128 bg-black object-scale-down" src="/assets/genshin_vision/vision_milled.jpg">
+					</a>
+					<figcaption class="text-center">
+						Milled and polished product
+					</figcaption>
+				</figure>
+				<p>
+					For this project, I wanted to try to manufacture an item from the video game <a href="https://genshin.hoyoverse.com/en/home">Genshin Impact</a>
+					and then do a small production run to sell if I deem it to to be profitable. While this type of merchandise is already proven to be in
+					demand, there exists no high end variation in the market. Most are made with 3D printed plastic with a spray-on zinc coating and
+					the metal ones have to make some heavy sacrifices in design to be more cheaply manufactured.
+					So I attempted a version without such compromises.
+				</p>
+				<p>
+					While my CAD experience is in <a href="https://www.autodesk.com/products/inventor/overview">Autodesk Inventor</a>,
+					my student license has expired so I modeled on the open-sourced <a href="https://www.freecad.org/">FreeCAD</a> instead.
+					With some online pictures as a reference, I was able to create a model looks essentially like in-game version but with
+					small almost unnoticeable tweaks that allowed the frame to be produced in only two setups on the mill without any special
+					or custom tooling.
+				</p>
+				<p>
+					The difficult problems was in CAM. The reality is that the open-source ecosystem is heavily under-developed when it comes to
+					CNC milling. FreeCAD's CAM toolkit lacked many essential features. In order to create a more efficient program I had to write a
+					few Python scripts to generate several of the necessary tool paths. The generated tool paths are kept in sync with the model
+					because my scripts each take in a FreeCAD sketch as an input, since the sketches are constrained to the model they are updated
+					whenever the model is updated.
+				</p>
+				<p>
+					After milling came another problem. The marks left by the mill looked horrible. To get rid of the markings I would have to go
+					though several stages of grinding/polishing. Polishing also helps combating corrosion since a smoother surface has a smaller
+					surface area that is in contact with oxygen. The problem is that polishing requires a large amount of human labor,
+					several repetitive stages, and the product's geometry is too complex for me to polish quickly with motorized tools.
+					I first did several experiments using a variety of tools and techniques to cut down the human cost, then I automated the early
+					stages on the CNC mill using ceramic brushes (<a href="https://deburringtechnologies.com/products/xebec-brush-surface/">A</a>
+					and <a href="https://deburringtechnologies.com/products/xebec-brush-end-type/">B</a>), but despite my efforts the was still
+					a significant amount of work that needed to be done by hand. I ultimately decided that it was not worth the labor to take
+					it to production.
+				</p>
+				<div class="mb-4 flex flex-col lg:flex-row gap-4">
+					<figure class="w-fit border indent-0 bg-white">
+						<a href="/assets/genshin_vision/vision_full_model.png">
+							<img class="w-120 object-scale-down" src="/assets/genshin_vision/vision_full_model.png" alt="CAD model of a Genshin Impact Vision">
+						</a>
+						<figcaption class="text-center">
+							CAD Model (made with <a href="https://www.freecad.org/">FreeCAD</a>)
+						</figcaption>
+					</figure>
+					<figure class="w-fit border indent-0 bg-white">
+						<a href="/assets/genshin_vision/vision_full_exploded_view.png">
+							<img class="w-150 lg:py-[4.45px] bg-white object-scale-down" src="/assets/genshin_vision/vision_full_exploded_view.png" alt="Exploded view">
+						</a>
+						<figcaption class="text-center">
+							Exploded view
+						</figcaption>
+					</figure>
+				</div>
+				<details class="indent-0">
+					<summary class="cursor-pointer">Click for more pictures</summary>
+					<ul class="mt-4 grid grid-cols-1 lg:grid-cols-2 gap-4 w-fit">
+						<li class="w-fit">
+							<figure class="w-fit border bg-white">
+								<a class="block h-100 my-auto" href="/assets/genshin_vision/vision_model_top.png">
+									<img class="w-120 object-scale-down" src="/assets/genshin_vision/vision_model_top.png" alt="Vision Top">
+								</a>
+								<figcaption class="text-center">
+									Vision Top
+								</figcaption>
+							</figure>
+						</li>
+						<li class="w-fit">
+							<figure class="w-fit border bg-white">
+								<a class="block h-100 my-auto" href="/assets/genshin_vision/vision_model_bottom.png">
+									<img class="w-120 object-scale-down" src="/assets/genshin_vision/vision_model_bottom.png" alt="Vision Bottom">
+								</a>
+								<figcaption class="text-center">
+									Vision Bottom
+								</figcaption>
+							</figure>
+						</li>
+						<li class="w-fit">
+							<figure class="w-fit border bg-white">
+								<a class="block h-100 my-auto" href="/assets/genshin_vision/crystal_top.png">
+									<img class="w-120 object-scale-down" src="/assets/genshin_vision/crystal_top.png" alt="Crystal Top">
+								</a>
+								<figcaption class="text-center">
+									Crystal Top
+								</figcaption>
+							</figure>
+						</li>
+						<li class="w-fit">
+							<figure class="w-fit border bg-white">
+								<a class="block h-100 my-auto" href="/assets/genshin_vision/crystal_bottom.png">
+									<img class="w-120 object-scale-down" src="/assets/genshin_vision/crystal_bottom.png" alt="Crystal Bottom">
+								</a>
+								<figcaption class="text-center">
+									Crystal Bottom
+								</figcaption>
+							</figure>
+						</li>
+						<li class="w-fit">
+							<figure class="w-fit border bg-white">
+								<a class="block h-100 my-auto" href="/assets/genshin_vision/mold_top.png">
+									<img class="w-120 object-scale-down" src="/assets/genshin_vision/mold_top.png" alt="Mold Top">
+								</a>
+								<figcaption class="text-center">
+									Mold Top
+								</figcaption>
+							</figure>
+						</li>
+						<li class="w-fit">
+							<figure class="w-fit border bg-white">
+								<a class="block h-100 my-auto" href="/assets/genshin_vision/mold_bottom.png">
+									<img class="w-120 object-scale-down" src="/assets/genshin_vision/mold_bottom.png" alt="Mold Bottom">
+								</a>
+								<figcaption class="text-center">
+									Mold Bottom
+								</figcaption>
+							</figure>
+						</li>
+						<li class="w-fit">
+							<figure class="w-fit border bg-white">
+								<a class="block" href="/assets/genshin_vision/mold_full_exploded.png">
+									<img class="w-120 object-scale-down" src="/assets/genshin_vision/mold_full_exploded.png" alt="Mold exploded">
+								</a>
+								<figcaption class="text-center">
+									Mold Exploded
+								</figcaption>
+							</figure>
+						</li>
+					</ul>
+				</details>
 			</section>
 		</section>
 	</article>

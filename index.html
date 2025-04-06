@@ -36,6 +36,7 @@
 			<h3 class="text-4xl mb-0">Projects</h3>
 			<p class="indent-8">
 				More software projects are found in my <a href="https://github.com/Edmond120/Portfolio">portfolio repo</a>.
+				In addition, there are still some more recent projects that I have yet to move from my private Git server to GitHub.
 			</p>
 			<section class="indent-8">
 				<header class="indent-0">
@@ -58,13 +59,34 @@
 					This is chat bot that I made to remember Discord messages using a key value store.
 					Instead of storing the message, the bot stores a reference to the message such that the data is stored on Discord, allowing
 					the for updates to be done without the bot by just editing the Discord message. The primary use of this bot was to query
-					documentation for Dungeon and Dragons.
+					documentation for Dungeon and Dragons, although it was also used to reference notes in a variety of Discord servers.
 				</p>
 				<p>
 					Additional features include animated timers and dice rolls.
 					While simple, this was one of my more useful projects that saw frequent use in multiple private servers during its years of
 					operation.
 				</p>
+			</section>
+			<section class="indent-8">
+				<h4 class="indent-0 text-2xl">Rust HTTP web server utilities</h4>
+				<p>
+					These are a collection of middleware and services that I wrote when I was experimenting
+					with using Rust for web development. They are compatible with <a href="https://github.com/tokio-rs/axum">Axum</a>.
+					Currently they are part of a web server in a private repository, but I may break them out and put them on GitHub later.
+				</p>
+				<br>
+				<ul class="ml-8 indent-0 list-disc">
+					<li>
+						A static file service that embeds files inside the program's binary.
+						It supports etags and compression for gzip, brotil, and deflate.
+					</li>
+					<li>
+						CSRF prevention middleware that checks fetch metadata and origin headers.
+					</li>
+					<li>
+						<a href="https://htmx.org/">HTMX</a> integration for <a href="https://github.com/tokio-rs/axum">Axum</a>.
+					</li>
+				</ul>
 			</section>
 			<section class="indent-8">
 				<h4 class="indent-0 text-2xl">8-bit CPU</h4>
